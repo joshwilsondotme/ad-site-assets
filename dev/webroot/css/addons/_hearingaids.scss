@@ -1,0 +1,41 @@
+.hearing-aid-container {
+  @include clearfix();
+  width: 100%;
+  height: auto;
+  margin: 0 0 20px 0;
+  background: #fff;
+  border: 1px solid #e6e5eb;
+  border-radius: 2px;
+  padding: 2%;
+  &:not(.full-width) {
+    .hearing-aid-photo {
+      width: 21%;
+      height: auto;
+      margin: 0 3% 0 0;
+      padding: 0px;
+      float: left;
+      @media only screen and (max-width: 40em) {
+        width: 70%;
+        float: none;
+        margin: 0 auto;
+      }
+    }
+    .hearing-aid-content {
+      width: 76%;
+      height: auto;
+      margin: 0px;
+      padding: 0px;
+      float: left;
+      @media only screen and (max-width: 40em) {
+        width: 100%;
+        text-align: center;
+        float: none;
+      }
+    }
+  }
+}
+
+.apple-branding {
+  @extend .list-inline;
+  li {width: 30%;}
+}

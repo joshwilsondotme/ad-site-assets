@@ -1,0 +1,47 @@
+$footer-background-bg: darken($secondary-accent-color, 5%) !default;
+$footer-meta-container-bg: darken($secondary-accent-color, 8%) !default;
+
+footer {
+  background-color: $footer-background-bg;
+  #footer-nav {
+    width: auto;
+    margin: 0px auto;
+    display: table;
+    @media #{$tablet-mobile} {display: none;}
+    ul {
+      margin: 0px;
+      padding: rem((50, 0));
+      list-style-type: none;
+      li {
+        border-left: 1px solid #fff;
+        margin: 0 !important;
+        padding: 0;
+        &:first-child {
+          border-left: none;
+        }
+        a {
+          color: $white;
+          padding: 0 14px;
+          font-size: 14px;
+          width: auto;
+          text-decoration: none;
+          display: block;
+          float: left;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  #footer-meta-container {
+    text-align: center;
+    color: $white;
+    padding: 10px;
+    background-color: $footer-meta-container-bg;
+    font-size: 12px;
+    a {color: $white; text-decoration: underline;}
+  }
+}

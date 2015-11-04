@@ -1,0 +1,16 @@
+{
+	"css": {
+		"___": "These are files that you want to be compiled into CSS (they should include any other files that belong on all pages)",
+		"___": "  They will be refreshed any time a sass/scss file changes in the project",
+		"build": ["layout.scss"]
+	},
+	"js": {
+		"___": "These are files that you want to be compiled into layout.js (there is no support for multiple js outputs currently)",
+		"___": "  The path should be relative to webroot/js (so webroot/js/vendor/foo.js should be listed as vendor/foo.js)",
+		"___": "  This should be basically every js file except jQuery (which should be served from the google CDN) or page-specific files",
+		"layout": ["../dependencies/oneframework/js/plugins.js", "../dependencies/oneframework/js/app.js", "script.js"]
+	},
+  "dependencies": {
+    "oneframework": "AudiologyDesign/oneframework#master"
+  }
+}

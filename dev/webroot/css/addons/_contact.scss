@@ -1,0 +1,26 @@
+form {
+  input {
+    margin-bottom: 15px !important;
+  }
+  .first-name, .last-name {
+    width: 48%;
+    float: left;
+    &:not(.first-name) {
+      margin-left: 4%;
+    }
+  }
+  .city, .state, .zip {
+    float: left;
+  }
+  .city {
+    width: 58%;
+  }
+  .state {
+    width: 15%;
+    margin-left: 2%;
+  }
+  .zip {
+    width: 23%;
+    margin-left: 2%;
+  }
+}

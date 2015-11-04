@@ -1,0 +1,41 @@
+$base-text-sizer-btn-color:       $primary-accent-color !default;
+$base-text-sizer-btn-color-hover: $secondary-accent-color !default;
+$base-text-sizer-btn-text-color:  $white !default;
+$base-text-sizer-btn-radius:      4px !default;
+$base-text-sizer-border-color:    $white !default;
+
+
+.text-sizer {
+  margin-bottom: rem(30);
+  font-size: 0;
+  @media only screen and (max-width: 40em) {display: none;}
+  a {
+    background-color: $base-text-sizer-btn-color;
+    text-align: center;
+    display: inline-block;
+    width:33.33334%;
+    position:relative;
+    text-decoration: none;
+    color: $base-text-sizer-btn-text-color;
+    line-height: $base-btn-line-height;
+    vertical-align: middle;
+    @include transition(background, 0.3s, ease);
+    &:hover {
+      background-color: $base-text-sizer-btn-color-hover;
+      color: $base-text-sizer-btn-text-color;
+    }
+    &.text-sml {
+      @include border-left-radius($base-text-sizer-btn-radius);
+      font-size: rem(14);
+    }
+    &.text-med {
+      border-left: 1px solid $base-text-sizer-border-color;
+      border-right: 1px solid $base-text-sizer-border-color;
+      font-size: rem(16);
+    }
+    &.text-lrg {
+      @include border-right-radius($base-text-sizer-btn-radius);
+      font-size: rem(18);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{{>site_header}}
+ <div id="int-banner" class="white">
+   <div class="row">
+     <div class="small-12 columns">{{{fragment.interior-banner}}}</div>
+   </div>
+ </div>
+ <div class="main-content-wrap">
+   <div class="row">
+    <section id="main-content" class="medium-8 columns">
+       {{{flash}}}
+      <h1>{{page.Page.title}}</h1>
+      {{{pageContent}}}
+    </section>
+    <aside class="medium-4 columns" id="sidebar">
+      {{>main_sidebar}}
+    </aside>
+   </div>
+ </div>
+{{>site_footer}}
