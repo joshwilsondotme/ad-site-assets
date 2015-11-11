@@ -1,40 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic);
 @import 'site-settings';
-
-// Variable overrides
-$cdn-file-path:                 'https://88ebd614d6d385cab1fa-690979800f2b6f086ae14b7920465b0b.ssl.cf2.rackcdn.com/projects/';
-$base-body-bg-color:            #363646;
-$default-color:                 #e9e9e8;
-$primary-accent-color:          #81011f;
-$secondary-accent-color:        #363646;
-$tertiary-accent-color:         #f8f8fc;
-$base-border-color:             #e5e5e8;
-$base-font:                     'Source Sans Pro', sans-serif;
-$base-font-size:                16px;
-$base-font-weight:              400;
-$base-font-color:               #363d43;
-$base-link-color:               $primary-accent-color;
-$base-link-hover-color:         lighten($primary-accent-color, 5%);
-$base-line-height:              1.5; // 24/16
-$base-font-size-large:          rem(18);
-$base-font-size-small:          rem(14);
-$base-title-h1:                 rem(28);
-$base-title-h2:                 rem(26);
-$base-title-h3:                 rem(24);
-$base-title-h4:                 rem(22);
-$base-title-h5:                 rem(20);
-$base-title-font-color:         $base-font-color;
-$base-title-font-weight:        bold;
-$base-title-text-transform:     normal;
-$base-navbar-link-text-transform: normal;
-$base-navbar-bg-hover-color:    darken($primary-accent-color, 5%);
-$base-navbar-font-size:         rem($base-font-size);
-$base-navbar-dropdown-color:    $primary-accent-color;
-$base-responsive-navbar-bg-color: $secondary-accent-color;
-$base-btn-height:               rem(42);
-$base-btn-line-height:          $base-btn-height;
-$base-btn-font-size:            rem(14);
-$base-btn-font-weight:          600;
+@import '../dependencies/oneframework/scss/oneframework',
+'../dependencies/oneframework/scss/extensions/btt-button',
+'addons/cover-slider',
+'addons/contact',
+'addons/footer',
+'addons/hearingaids',
+'addons/locations',
+'addons/mediabox',
+'addons/survey',
+'addons/textsizer';
 
 .white {
   &,
@@ -50,17 +24,6 @@ $base-btn-font-weight:          600;
     color: #fff !important;
   }
 }
-
-@import '../dependencies/oneframework/scss/oneframework',
-'../dependencies/oneframework/scss/extensions/btt-button',
-'addons/cover-slider',
-'addons/contact',
-'addons/footer',
-'addons/hearingaids',
-'addons/locations',
-'addons/mediabox',
-'addons/survey',
-'addons/textsizer';
 
 .btn {
   @extend .btn-flat-primary;

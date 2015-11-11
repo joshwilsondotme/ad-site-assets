@@ -7,7 +7,6 @@ footer {
     width: auto;
     margin: 0px auto;
     display: table;
-    @media #{$tablet-mobile} {display: none;}
     ul {
       margin: 0px;
       padding: rem((50, 0));
