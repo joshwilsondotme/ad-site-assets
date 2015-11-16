@@ -13,13 +13,20 @@ $base-media-box-border-radius: 2px !default;
   &:last-child {
     margin-bottom: 0px;
   }
-  .media-box-details, .media-box-content, .media-box-title {
+  .media-box-details,
+  .media-box-content,
+  .media-box-title {
     padding: 3%;
     width: 100%;
     height: auto;
   }
   .media-box-title {
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin: 0;
     }
   }
@@ -82,6 +89,19 @@ $base-media-box-border-radius: 2px !default;
     }
     .media-box-details {
       p {margin: $nomargin;}
+    }
+  }
+  &.location {
+    .media-box-img {
+      iframe {height: rem(300);}
+      .map-overlay {
+        background:transparent;
+        position:relative;
+        width:100%;
+        height: rem(300); /* your iframe height */
+        top: rem(300);  /* your iframe height */
+        margin-top: rem(-300);  /* your iframe height */
+      }
     }
   }
 }

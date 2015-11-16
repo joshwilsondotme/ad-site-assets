@@ -11,41 +11,14 @@
   }
 }
 .score-wrapper {
-  background-color: #d9edf7;
+  background-color: $info-success;
   margin-bottom: 20px;
   padding: 15px;
-  color: #31708f;
+  color: $base-font-color;
   text-align: center;
-  border: 1px solid #bce8f1;
+  border: 1px solid darken($info-success, 10%);
 }
 
 .btn-survey, .results button, .answer, .results button, button.btn-contact {
-  background-color: $primary-accent-color;
-  min-width: 160px;
-  margin-bottom: 5px;
-  padding: 0 20px;
-  color: #fff;
-  font-weight: 600;
-  text-align: center;
-  text-transform: lowercase;
-  display: inline-block;
-  transition: all 0.3s ease;
-  border: none;
-  text-decoration: none;
-  height: 42px;
-  line-height: 42px;
-  border-radius: 21px;
-  font-family: $base-font;
-}
-
-.results button,
-button.btn-contact {
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn-survey:hover, .survey-form button:hover, .answer:hover, .answer:focus {
-  background: lighten($primary-accent-color, 10%);
-  text-decoration: none;
-  color: $white;
+  @extend .btn;
 }
