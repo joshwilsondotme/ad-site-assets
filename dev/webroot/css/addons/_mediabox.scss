@@ -1,6 +1,7 @@
 $base-media-box-border-color: $default-color !default;
 $base-media-box-background: $white !default;
 $base-media-box-border-radius: 2px !default;
+$base-media-box-padding: 0px !default;
 
 .media-box {
   position: relative;
@@ -8,6 +9,7 @@ $base-media-box-border-radius: 2px !default;
   border: 1px solid $base-media-box-border-color;
   margin-bottom: rem(30);
   background-color: $base-media-box-background;
+  padding: $base-media-box-padding;
   @include border-radius($base-media-box-border-radius);
   @include clearfix();
   &:last-child {

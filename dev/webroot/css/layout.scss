@@ -5,7 +5,6 @@
 'addons/contact',
 'addons/footer',
 'addons/hearingaids',
-'addons/locations',
 'addons/mediabox',
 'addons/survey',
 'addons/textsizer';
@@ -31,7 +30,7 @@
 }
 
 .img-wrap {
-  border: 1px solid $base-border-color;
+  border: 1px solid $default-color;
   background-color: $white;
   padding: 1%;
   @include border-radius($base-border-radius);

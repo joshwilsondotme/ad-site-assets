@@ -42,6 +42,7 @@
 $cdn-file-path: 'https://88ebd614d6d385cab1fa-690979800f2b6f086ae14b7920465b0b.ssl.cf2.rackcdn.com/projects/';
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic);
+
 // Base Site Setup //
 //----------------------------------
 // $base-body-bg-color:     #ffffff;
@@ -53,17 +54,17 @@ $tertiary-accent-color:  #e8eef1;
 $default-color:          #dddddd;
 
 // Defaults
-//$white:     #fff;
-//$black:     #000;
-//$grey:      #333;
-//$lightgrey: #f9f9f9;
-//$darkgrey:  #222;
+$white:     #fff;
+$black:     #000;
+$grey:      #333;
+$lightgrey: #f9f9f9;
+$darkgrey:  #222;
 
 // Typography
-//$base-font:        'Source Sans', sans-serif;
+$base-font:        'Source Sans', sans-serif;
 // $base-font-size:   100%;
 // $base-font-weight: 400;
-//$base-font-color:  #231f20;
+$base-font-color:  #231f20;
 
 // $base-link-color:       $primary-accent-color;
 // $base-link-hover-color: lighten($primary-accent-color, 5%);
@@ -84,11 +85,11 @@ $base-title-h4: rem(18);
 $base-title-h5: rem(16);
 $base-title-h6: rem(14);
 //
-//$base-title-font-color:      $secondary-accent-color;
-//$base-title-font-family:     $base-font;
-//$base-title-font-weight:     700;
+// $base-title-font-color:      $secondary-accent-color;
+// $base-title-font-family:     $base-font;
+// $base-title-font-weight:     700;
 // $base-title-font-style:      normal;
-//$base-title-text-transform:  normal;
+// $base-title-text-transform:  normal;
 // $base-title-line-height:     1.4;
 // $base-title-top-margin:      .2rem;
 // $base-title-bottom-margin:   .5rem;
@@ -105,10 +106,10 @@ $base-title-h6: rem(14);
 
 // Navbar Setup
 // $base-navbar-class:                           '.navbar';
-//$base-navbar-height:                          rem(50);
-//$base-navbar-bg-color:                        $primary-accent-color;
-//$base-navbar-bg-hover-color:                  $white;
-//$base-navbar-bg-active-color:                 transparent;
+// $base-navbar-height:                          rem(50);
+// $base-navbar-bg-color:                        $primary-accent-color;
+// $base-navbar-bg-hover-color:                  $white;
+// $base-navbar-bg-active-color:                 transparent;
 // $base-navbar-link-color:                      $white;
 // $base-navbar-link-padding:                    rem(0 14);
 // $base-navbar-font-size:                       1rem;
@@ -118,9 +119,9 @@ $base-title-h6: rem(14);
 // $base-navbar-line-height:                     $base-navbar-height;
 
 // Dropdwon Setup
-//$base-navbar-dropdown-color:                  $white;
-//$base-navbar-dropdown-link-color:             $base-font-color;
-//$base-navbar-dropdown-link-hover-color:       $secondary-accent-color;
+// $base-navbar-dropdown-color:                  $white;
+// $base-navbar-dropdown-link-color:             $base-font-color;
+// $base-navbar-dropdown-link-hover-color:       $secondary-accent-color;
 // $base-navbar-dropdown-link-padding:           rem(10 40 10 14);
 // $base-navbar-dropdown-font-size:              rem(14);
 // $base-navbar-dropdown-link-text-transform:    none;
@@ -135,7 +136,7 @@ $base-title-h6: rem(14);
 // $base-navbar-dropdown-column-link-padding:    rem(10 14);
 
 // Responsive Navbar Setup
-//$base-responsive-navbar-bg-color:             $secondary-accent-color;
+// $base-responsive-navbar-bg-color:             $secondary-accent-color;
 // $base-responsive-navbar-height:               rem(40);
 // $base-responsive-navbar-padding:              rem(10);
 
@@ -325,28 +326,29 @@ $base-title-h6: rem(14);
 // $base-bttn-right-position:   rem(40);
 // $base-bttn-bottom-position:  rem(40);
 // $base-btn-icon-color:        $white;
-//$base-bttn-bg-color:         darken($primary-accent-color, 15%);
-//$base-bttn-bg-hover-color:   darken($primary-accent-color, 25%);
+// $base-bttn-bg-color:         darken($primary-accent-color, 15%);
+// $base-bttn-bg-hover-color:   darken($primary-accent-color, 25%);
 // $base-btn-icon-line-height:  rem(38);
 
 
 // Textsizer  //
 //----------------------------------
-//$base-text-sizer-btn-color:       $secondary-accent-color;
-//$base-text-sizer-btn-color-hover: $tertiary-accent-color;
-//$base-text-sizer-btn-text-color:  $white;
-//$base-text-sizer-btn-radius:      4px;
-//$base-text-sizer-border-color:    $white;
-//$base-text-sizer-btn-text-color-hover: $base-font-color;
+// $base-text-sizer-btn-color:       $secondary-accent-color;
+// $base-text-sizer-btn-color-hover: $tertiary-accent-color;
+// $base-text-sizer-btn-text-color:  $white;
+// $base-text-sizer-btn-radius:      4px;
+// $base-text-sizer-border-color:    $white;
+// $base-text-sizer-btn-text-color-hover: $base-font-color;
 
 // Footer  //
 //----------------------------------
-//$footer-background-bg: $primary-accent-color;
-//$footer-meta-container-bg: $secondary-accent-color;
+// $footer-background-bg: $primary-accent-color;
+// $footer-meta-container-bg: $secondary-accent-color;
 
 
 // Media-Box  //
 //----------------------------------
-//$base-media-box-border-color: $default-color;
-//$base-media-box-background: $white;
-//$base-media-box-border-radius: 2px;
+// $base-media-box-padding: 2px;
+// $base-media-box-border-color: $default-color;
+// $base-media-box-background: $white;
+// $base-media-box-border-radius: 2px;
