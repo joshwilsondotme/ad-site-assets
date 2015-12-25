@@ -22,11 +22,21 @@
   blockquote {
     color: #fff !important;
   }
+  .btn {
+    @extend .btn-border-primary;
+    border-color: $white;
+    color: $white;
+    &:hover {
+      background: #fff;
+      color: $base-font-color;
+      border-color: #fff;
+    }
+  }
 }
 
 .btn {
   @extend .btn-flat-primary;
-  @include border-radius(5px);
+  @include border-radius($base-border-radius);
 }
 
 .img-wrap {
@@ -36,12 +46,17 @@
   @include border-radius($base-border-radius);
 }
 
-.img-left {float: left; margin: rem((0, 15, 15, 0));}
-.img-right {float: right; margin: rem((0, 0, 15, 15));}
+.img-left   {float: left; margin: rem((0, 15, 15, 0));}
+.img-right  {float: right; margin: rem((0, 0, 15, 15));}
 
-.img-sml {width: 35%;}
-.img-med {width: 45%;}
-.img-lrg {width: 55%;}
+.img-sml  {width: 35%;}
+.img-med  {width: 45%;}
+.img-lrg  {width: 55%;}
+.img-auto {width: auto;}
+
+.txt-tac {text-align: center;}
+.txt-tal {text-align: left;}
+.txt-tar {text-align: right;}
 
 .hidden-widgets > div {
   &:not(.survey-wrap):not(.survey-test):not(.survey-message) {
@@ -76,6 +91,14 @@ ul.services-list {
       width: 50%;
       float: left;
     }
+  }
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] { width: 100% !important; }
+
+.column-full-width {
+  @media (max-width: 48em) {
+    width: 100% !important;
   }
 }
 

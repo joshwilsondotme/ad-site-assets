@@ -1,0 +1,60 @@
+#main-banner {position: relative;}
+
+#slider {
+  .slide {
+    background-size: cover;
+    background-position: center center;
+    &.slide1 {background-image: url(#{$cdn-file-path}SITE_URL/images/bg-slide1.jpg);}
+    &.slide2 {background-image: url(#{$cdn-file-path}SITE_URL/images/bg-slide2.jpg);}
+    &.slide3 {background-image: url(#{$cdn-file-path}SITE_URL/images/bg-slide3.jpg);}
+    &.slide4 {background-image: url(#{$cdn-file-path}SITE_URL/images/bg-slide4.jpg);}
+    &.slide5 {background-image: url(#{$cdn-file-path}SITE_URL/images/bg-slide5.jpg);}
+    .row {
+      height: rem(500);
+      position: relative;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      .columns{
+        @include vertical-align(relative);
+      }
+    }
+  }
+}
+
+/* Slider Controls
+===================================================*/
+#slide-controls-container {
+  @include clearfix;
+  position: absolute;
+  bottom: rem(10);
+  width: 100%;
+  z-index: 101;
+  text-align: center;
+  a.slide-controls {
+    display: inline;
+    opacity: .7;
+    color: $secondary-accent-color;
+    font-size: rem(15);
+    &#prev {}
+    &#next {}
+    &:hover, &:focus {opacity: 1 ;}
+  }
+}
+#slide-pager {
+  width: 100%;
+  text-align: center;
+  z-index: 999;
+  display: inline;
+  a {
+    display: inline-block;
+    width: rem(10);
+    height: rem(10);
+    @include border-radius(50%);
+    opacity: .7;
+    margin: rem(0 2);
+    text-indent: -9999px;
+    background-color: $quaternary-accent-color;
+    &.cycle-pager-active {opacity: 1; background-color: $secondary-accent-color;}
+  }
+}

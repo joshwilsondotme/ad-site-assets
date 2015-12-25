@@ -1,0 +1,31 @@
+$footer-background-bg: darken($secondary-accent-color, 5%) !default;
+$footer-meta-container-bg: darken($secondary-accent-color, 8%) !default;
+
+footer {
+  background-color: $footer-background-bg;
+  #footer-nav {}
+  .footer-inner {
+    padding: 60px 0;
+    p {font-size: 12px;}
+  }
+  .footer-menu {
+    margin: 0;
+    padding: 0;
+    li {
+      width: 50%;
+      float: left;
+      margin: 0 0 15px 0;
+      padding: 0;
+      font-size: 12px;
+    }
+  }
+
+  #footer-meta-container {
+    text-align: center;
+    color: $white;
+    padding: 10px;
+    background-color: $footer-meta-container-bg;
+    font-size: 12px;
+    a {color: $white; text-decoration: underline;}
+  }
+}
