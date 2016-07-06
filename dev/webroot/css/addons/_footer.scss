@@ -1,0 +1,86 @@
+// Footer
+
+$footer-color      : $base-font-color !default;
+$footer-border     : 2px solid $white !default;
+$footer-bg-color   : $tertiary-accent-color !default !global;
+$footer-meta-bg    : darken($tertiary-accent-color, 5%) !default;
+$meta-border       : 2px solid $white !default;
+
+footer {
+  .footer-nav-wrap {
+    background: $footer-bg-color;
+    border-top: $footer-border;
+    padding: 40px 0;
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      margin: 1.25rem 0;
+      padding: 0;
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: $base-font-color;
+        text-decoration: none;
+        font-size: 14px;
+        &:hover {
+          text-decoration:underline;
+        }
+      }
+      ul {
+        display: none;
+      }
+    }
+    .footer-mission {
+      @include breakpoint(medium down) {
+        text-align: left;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+    .footer-nav > ul {
+      @include clearfix();
+      > li {
+        width: 50%;
+        float: left;
+        @include breakpoint(medium down) {
+          float: none;
+          width: 100%;
+        }
+      }
+    }
+    .footer-last {
+      font-size: 15px;
+      @include breakpoint(medium down) {
+        text-align: left;
+      }
+      .social-btns {
+        margin-top: 15px;
+      }
+      .email a {
+        color: $base-font-color;
+      }
+    }
+  }
+
+  .footer-meta-container {
+    background: $footer-meta-bg;
+    border-top: $meta-border;
+    font-size: 10px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    @include white;
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

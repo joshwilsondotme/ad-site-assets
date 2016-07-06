@@ -1,242 +1,319 @@
+
+// Import Dependencies
 @import 'site-settings';
 @import '../dependencies/oneframework/scss/oneframework',
 '../dependencies/oneframework/scss/extensions/btt-button',
-'addons/cover-slider',
+'project',
+'addons/textsizer',
+'addons/sliders',
+'addons/headers',
 'addons/contact',
-'addons/footer',
-'addons/hearingaids',
+'addons/ctas',
 'addons/mediabox',
-'addons/survey',
-'addons/textsizer';
+'addons/hearingaids',
+'addons/footer';
 
-.white {
-  &,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  p,
-  a:not(.btn),
-  strong,
-  blockquote {
-    color: #fff !important;
+
+// TODO Fix these conflicts
+nav.navbar ul > li[class*="columns"] > ul > li[class*="column"] a.column-title:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+.btn-social{
+  &.btn-social-full {
+    width: auto;
+    padding: rem(0 15);
   }
-  .btn {
-    @extend .btn-border-primary;
-    border-color: $white;
-    color: $white;
-    &:hover {
-      background: #fff;
-      color: $base-font-color;
-      border-color: #fff;
-    }
+  &.btn-social-round {
+    border-radius: $base-social-line-height ;
   }
-}
-
-.btn {
-  @extend .btn-flat-primary;
-  @include border-radius($base-border-radius);
-}
-
-.img-wrap {
-  border: 1px solid $default-color;
-  background-color: $white;
-  padding: 1%;
-  @include border-radius($base-border-radius);
-}
-
-.img-left   {float: left; margin: rem((0, 15, 15, 0));}
-.img-right  {float: right; margin: rem((0, 0, 15, 15));}
-
-.img-sml  {width: 35%;}
-.img-med  {width: 45%;}
-.img-lrg  {width: 55%;}
-.img-auto {width: auto;}
-
-.txt-tac {text-align: center;}
-.txt-tal {text-align: left;}
-.txt-tar {text-align: right;}
-
-.hidden-widgets > div {
-  &:not(.survey-wrap):not(.survey-test):not(.survey-message) {
-    display: none;
-  }
-}
-
-.survey-link { display: none; }
-
-div.top {
-  text-align: right;
-  margin-bottom: 30px;
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    &:after {
-      content: "\f01b";
-      font-family: 'FontAwesome';
-      margin-left: 10px;
-    }
-  }
-}
-
-ul.services-list {
-  @include clearfix();
-  margin: 0;
-  padding: 10px 0;
-  list-style: none;
-  li {
-    padding: 4px 0;
-    @media only screen and (min-width: 64em) {
-      width: 50%;
-      float: left;
-    }
-  }
-}
-
-.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] { width: 100% !important; }
-
-.column-full-width {
-  @media (max-width: 48em) {
-    width: 100% !important;
-  }
-}
-
-body {
-  background-color: $base-body-bg-color;
-  @media only screen and(max-width: 64em) {margin-top: rem(40);}
-}
-
-// Header
-//-----------------------------------------
-header.main-header-wrapper {
-  background-color: $white;
-  padding: rem(30 0);
-  #logo {
-    display: block;
-    width: 100%;
+  &.btn-social-icon {
+    background: none;
     height: auto;
   }
-  #header-info {
-    @media only screen and (max-width: 40em) { text-align: center; margin-top: rem(30);}
-    text-align: right;
+}
+
+
+
+/* Navigation
+===================================================*/
+$nav-wrap-bg                 : $primary-accent-color;
+$nav-border-top              : none;
+$nav-border-bottom           : 1px solid $white;
+$nav-item-border             : 1px solid $white;
+$nav-dropdown-border         : 1px solid $white;
+$nav-dropdown-item-border    : 1px solid $white;
+$nav-dropdown-border-radius  : 2px;
+
+.navbar-inline > ul {
+  > li {
+    &.active > a,
+    &:hover > a  {
+      background-color: transparent !important;
+      box-shadow: inset 0 -3px 0 $primary-accent-color;
+      color: $base-font-color;
+    }
+    > a {color: $base-font-color !important;}
   }
 }
 
-// Navigation
-//-----------------------------------------
 .navbar-wrapper {
-  border-bottom: 1px solid $white;
-  nav#{$base-navbar-class} > ul {
-    > li {
-      border-right: 1px solid #fff;
-      &:first-child {border-left: 1px solid #fff;}
-      &[class*="columns"]>ul {
-        >li[class*="column"] {
-          border: 0;
-          > ul {
-            border: 0;
-            min-width: auto;
-          }
+  background: $nav-wrap-bg;
+  border-top: $nav-border-top;
+  border-bottom: $nav-border-bottom;
+  position: relative;
+  z-index: 2000;
+  .navbar {
+    position: relative;
+    > ul > li {
+      @if ($nav-item-border != none) {
+        &:first-child > a {
+          border-left: $nav-item-border;
         }
       }
-      a{
-        &[href*="javascript"] {
-          cursor: default;
-          &:after {
-            content: '\f107';
-            font-family: 'FontAwesome';
-            margin-left: 5px;
-          }
+      > a {
+        @if ($nav-item-border != none) {
+          border-right: $nav-item-border;
         }
       }
-       ul {
-        border: 1px solid $white;
+    }
+  }
+}
+
+.navbar {
+  position: relative;
+  > ul > li {
+    &:hover > a,
+    &:focus > a,
+    &.active > a {
+
+    }
+    > a {
+      &[href*="javascript"] {
+        cursor: default;
+        &:after {
+          content: '\f107';
+          font-family: 'FontAwesome';
+          margin-left: 5px;
+          line-height: 0;
+        }
+      }
+    }
+    &:not(.has-columns) > ul {
+      @if ($nav-dropdown-border != none) {
+        border: $nav-dropdown-border;
         left: -1px;
-         li {
-          border-top: 1px solid $white;
-          &:first-child {border-top: 0;}
-           a {font-size: $base-font-size;}
-           > ul {
-             top: -1px;
-             left: 100%;
-           }
+      }
+      @if ($nav-dropdown-border-radius != 0) {
+        @include border-bottom-radius(2px);
+      }
+      > li {
+        &:hover > a,
+        &:focus > a,
+        &.active > a {
+
         }
+        ul {border: $nav-dropdown-item-border;}
+      }
+      li a {
+        border-top: $nav-dropdown-item-border;
+      }
+      li:first-child a {
+        border-top: none;
+      }
+      li:last-child a {
+        @if ($nav-dropdown-border-radius != 0) {
+          @include border-bottom-radius(2px);
+        }
+      }
+    }
+    &.has-columns > ul {
+      @if ($nav-dropdown-border != none) {
+        border: $nav-dropdown-border;
+        left: -1px;
+      }
+      @if ($nav-dropdown-border-radius != 0) {
+        @include border-bottom-radius(2px);
+      }
+      > li > a {
+        font-weight: bold;
+      }
+      > li > a:hover,
+      > li:hover > a {
+        background: none;
+      }
+      li > ul > li > a {
+        border-top: 1px solid #fff;
       }
     }
   }
 }
 
-// Main Banner
-//-----------------------------------------
-//Full Width Slider
-/* #slider {
-  .slide {
-    background-size: cover;
-    background-position: center center;
-    &.slide1 {background-image: url(#{$cdn-file-path}abingtonaudiology.com/images/slide1.jpg);}
-    &.slide2 {background-image: url(#{$cdn-file-path}abingtonaudiology.com/images/slide2.jpg);}
-    &.slide3 {background-image: url(#{$cdn-file-path}abingtonaudiology.com/images/slide3.jpg);}
-    .row {
-      height: rem(500);
-      position: relative;
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      .columns{
-        @include vertical-align(absolute);
-      }
-      .slide-content {
-        background-color: $white;
-        box-shadow: 0 1px 2px rgba(black, .15);
-        @include border-radius(5px);
-        padding: rem(35);
-        h2 {
-          font-size: rem(38);
-          font-weight: 400;
-        }
-      }
+
+/* Slider Specifics
+===================================================*/
+.slide-1 {@include cover-background('slide-1.jpg');}
+.slide-2 {@include cover-background('slide-2.jpg');}
+.slide-3 {@include cover-background('slide-3.jpg');}
+
+#slider-full {
+  .slide-content {
+
+  }
+}
+
+/* CTAs
+===================================================*/
+// Bordered Icon CTA
+// @include cta(
+//   $img-size: 100px,
+//   $img-bg: transparent,
+//   $img-radius: 50%,
+//   $img-height: 100px,
+//   $img-line-height: 100px,
+//   $img-color: $primary-accent-color,
+//   $img-border: 3px solid $primary-accent-color,
+//   $icon-size: $base-title-h1,
+//   $heading-font-size: 21px,
+//   $box-shadow: none,
+//   $text-padding: 20px 0 0,
+//   $text-align: center,
+//   $z-index: 3,
+//   $border-width: 0
+// );
+
+// Service Icon CTA
+// @include cta(
+//   $img-size: 70px,
+//   $img-radius: 50%,
+//   $img-height: 70px,
+//   $img-line-height: 70px,
+//   $img-color: $white,
+//   $icon-size: $base-title-h2,
+//   $box-shadow: none,
+//   $text-padding: 20px 0 0,
+//   $z-index: 3,
+//   $border-width: 0
+// );
+
+/* Homepage Content Blocks
+===================================================*/
+.hp-section {
+  &.first {}
+  &.second {}
+  &.third {}
+  &.fourth {}
+  &.fifth {}
+}
+
+
+/* Testimonial Sliders
+===================================================*/
+
+.testimonial-slider{
+  blockquote {
+    font-family: $alt-font;
+    font-style: italic;
+    font-size: rem(24) !important;
+    font-weight: normal;
+
+    cite {
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: $base-font;
+      margin-top: rem(30);
     }
   }
-} */
+}
 
-// Sub Banner
-//-----------------------------------------
+// TODO Fix this
+// .testimonial-slider-carousel {
+//   padding: 0;
+//   height: auto;
+//   @include flex-grid-row();
+//   @include flex-grid-row-align(spaced);
+//   blockquote {
+//     @include flex-grid-column(5);
+//     @include flex-grid-column-align();
+//     margin-bottom: 0;
+//     white-space: normal;
+//     text-align: center;
+//     cite {text-align: center; margin-top: rem(20);}
+//     @media (max-width: 640px) {
+//       @include flex-grid-column(12);
+//     }
+//   }
+//
+// }
 
-#int-banner {
-  background-image: url(#{$cdn-file-path}abingtonaudiology.com/images/bg-int-banner.jpg);
-  background-size: cover;
-  background-position: center center;
+/* Logo List Slider
+===================================================*/
+.logo-list-slider {
+  padding: 0;
+  height: auto;
+  margin-top: rem(40);
+  @include flex-grid-row();
+  li {
+    list-style-type: none;
+    @include flex-grid-column();
+    @include flex-grid-column-align(middle);
+    text-align: center;
+    a {display: block;}
+    img {width: 75%;}
+  }
+}
+
+.basic-slide-controls {
+  width: 100%;
+  text-align: center;
+  margin-top: rem(40);
+  .list-pager, .test-pager {
+    a {
+      display: inline-block;
+      width: rem(10);
+      height: rem(10);
+      @include border-radius(50%);
+      border: 2px solid $primary-accent-color;
+      margin: rem(0 2);
+      text-indent: -9999px;
+      background-color: transparent;
+      &.cycle-pager-active {background-color: rgba($primary-accent-color,1)}
+    }
+  }
+}
+
+/* Logo List
+===================================================*/
+.logo-list  {
   padding: rem(30 0);
+  @include flex-grid-row();
+  @include flex-grid-row-align(null, middle);
+  > li {
+    list-style-type: none;
+    @include flex-grid-column();
+    @include flex-grid-column-align(middle);
+    @include breakpoint(small down) {
+      @include flex-grid-column(12);
+      img {width: 50%; margin: 0 auto; display: block;}
+      margin-top: rem(30);
+      &:first-child {margin-top: 0;}
+    }
+  }
 }
-
-// Homepage
-//-----------------------------------------
-.hp-wrap {
-  padding: rem(60 0);
-}
-
-#hp-section-1 {
-}
-
-#hp-section-2 {
-}
-
-#hp-section-3 {
-
-}
-
-#hp-section-4 {
-
-}
-
-#hp-section-5 {
-
-}
-
 
 // Interior Page
 //-----------------------------------------
+#sub-banner {
+  @include cover-background('bg-interior-banner.jpg');
+  padding: rem(60 0);
+  h3 {
+    text-transform: uppercase;
+    color: $white;
+  }
+}
+
 .main-content-wrap {
   background-color: $white;
   padding: rem(60 0);
@@ -244,7 +321,115 @@ header.main-header-wrapper {
 
 #sidebar {
   @media only screen and (max-width: 40em) { margin-top: rem(40);}
-  .sb-cta {
-    margin-bottom: rem(40);
+  .cta {margin-bottom: rem(30);}
+}
+
+/* Footer
+===================================================*/
+.footer-logo {width: 200px;}
+footer {}
+
+
+/* Blockquotes
+===================================================*/
+
+$base-blockquote-font-color:    $base-font-color !default;
+$base-blockquote-font-size:     $base-paragraph-font-size !default;
+$base-blockquote-font-style:    italic !default;
+$base-blockquote-padding:       rem(10) !default;
+$base-blockquote-margin-bottom: rem(35) !default;
+
+blockquote {
+  font-size:     $base-blockquote-font-size;
+  font-style:    $base-blockquote-font-style;
+  margin-bottom: $base-blockquote-margin-bottom;
+  padding:       $base-blockquote-padding;
+  color:         $base-blockquote-font-color;
+  line-height:   $base-line-height;
+  border-left:   0;
+  position:      relative;
+
+  cite {
+    color: $base-font-color;
+    display: block;
+    text-align: left;
+    font-style: normal;
+    font-size: $base-blockquote-font-size;
+    margin-top: rem(15);
   }
+}
+
+//Left Border Blockquote
+.border-quote {
+  border-left:   4px solid $blockquote-border-color;
+  text-align:    left;
+}
+
+//Bubble Quote
+.bubble-quote {
+  background-color: $white;
+  border-radius: $base-border-radius;
+  padding: 30px;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0px 5px 0px rgba(0,0,0,0.25);
+  margin-bottom: rem(65);
+  font-style: italic;
+
+  &::before, &::after {
+    border-bottom: 46px solid transparent;
+    border-right: 46px solid $white;
+    bottom: -46px;
+    content: '';
+    position: absolute;
+    right: 25px;
+  }
+
+  &::before {
+    border-right: 49px solid rgba(0,0,0,0.25);
+    bottom: -52px;
+    right: 24px;
+  }
+
+  cite {
+    display: block;
+    text-align: right;
+    color: $secondary-accent-color;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  a {
+    text-align: right;
+    font-weight: bold;
+    display: inherit;
+    text-decoration: underline;
+  }
+
+}
+
+
+//Large Blockquote
+$blockquote-quote-border-radius: $base-border-radius !default;
+$blockquote-quote-color:         $white !default;
+$blockquote-quote-opacity:       .7 !default;
+$blockquote-quote-background:    $primary-accent-color !default;
+$blockquote-quote-padding:       rem(30);
+
+.lrg-quote {
+  background-color: $blockquote-quote-background;
+  border-radius: $blockquote-quote-border-radius;
+  padding: rem(30);
+  color: $white;
+  &::before {
+    content: '\201C';
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: rem(5);
+    left: rem(10);
+    opacity: $blockquote-quote-opacity;
+    color: $blockquote-quote-color;
+    font-size: rem(42);
+  }
+
 }

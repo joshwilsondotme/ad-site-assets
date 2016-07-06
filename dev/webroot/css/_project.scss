@@ -1,0 +1,285 @@
+$btn-style: 'btn-style-1' !default;
+
+%btn-style-1 {
+  @extend .btn;
+  @extend .btn-flat-primary;
+  @extend .btn-rounded;
+  cursor: pointer;
+  &:hover {
+    @extend .btn:hover;
+    @extend .btn-flat-primary:hover;
+    @extend .btn-rounded:hover;
+  }
+}
+
+%btn-style-1-alt {
+  @extend .btn;
+  @extend .btn-flat-secondary;
+  @extend .btn-rounded;
+  cursor: pointer;
+  &:hover {
+    @extend .btn:hover;
+    @extend .btn-flat-secondary:hover;
+    @extend .btn-rounded:hover;
+  }
+}
+
+%btn-style-2 {
+  @extend .btn;
+  @extend .btn-border-primary;
+  &:hover {
+    @extend .btn:hover;
+    @extend .btn-border-primary:hover;
+  }
+}
+
+%btn-style-3 {
+  @extend .btn;
+  @extend .btn-flat-primary;
+  @extend .btn-pill;
+  cursor: pointer;
+  &.hover {
+    @extend .btn:hover;
+    @extend .btn-flat-primary:hover;
+    @extend .btn-pill:hover;
+  }
+}
+
+.btn,
+.btn-survey,
+.results button,
+.answer,
+.results button,
+button.btn-contact {
+  @extend %#{$btn-style};
+}
+
+.answer {
+  padding: rem(0 15);
+  @include breakpoint(medium down) {
+    margin-bottom: rem(10);
+  }
+}
+
+%btn-white {
+  @extend .btn;
+  @extend .btn-border-primary;
+  border-color: $white;
+  color: $white;
+  &:hover {
+    background: $white;
+    border-color: $white;
+    color: $primary-accent-color;
+  }
+}
+
+%btn-white-solid {
+  @extend .btn;
+  @extend .btn-flat-primary;
+  background-color: $white;
+  color: $primary-accent-color;
+  &:hover {
+    background: darken($white, 10%);
+    color: $primary-accent-color;
+  }
+}
+
+@mixin white {
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a:not(.btn),
+  strong,
+  blockquote {
+    color: #fff !important;
+  }
+  .basic-slide-controls  a {
+    border-color: $white !important;
+    &.cycle-pager-active {background-color: $white !important;}
+  }
+}
+
+.white {
+  @include white;
+}
+
+/* Cover Background Image
+===================================================*/
+@mixin cover-background($img-uri, $background-top:"center", $background-left:"center", $background-attachment:"scroll") {
+  background: url(#{$cdn-file-path} + $img-uri) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment);
+  background-size: cover;
+}
+
+/* Image Wraping Class
+===================================================*/
+.img-wrap {
+  border: 1px solid $default-color;
+  background-color: $white;
+  padding: 4px;
+}
+
+.img-sml  {width: 35%;}
+.img-med  {width: 45%;}
+.img-lrg  {width: 55%;}
+
+.pull-right {margin: rem(0 0 15 15);}
+
+.pull-left {margin: rem(0 15 15 0);}
+
+/* Project Wide
+===================================================*/
+.h-outline {display: none;}
+// Hiding Sidebar Survey
+.hidden-widgets > div {
+  &:not(.survey-wrap):not(.survey-test):not(.survey-message) {
+    display: none;
+  }
+}
+
+.survey-link { display: none; }
+
+// Semi-Solution for Facebook Responsive
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] { width: 100% !important; }
+
+/* Tablet Portrait Full Width
+===================================================*/
+@mixin tablet-port($hp-section-bg) {
+  background-color: $hp-section-bg;
+  background-image: none !important;
+}
+
+@mixin text-center {text-align: center;}
+
+/* Vertical Align Mixin
+===================================================*/
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Site Lists
+===================================================*/
+div.top {
+  text-align: right;
+  margin-bottom: 30px;
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    &:after {
+      content: "\f01b";
+      font-family: 'FontAwesome';
+      margin-left: 10px;
+    }
+  }
+}
+
+ul.services-list, .overview-nav > ul{
+  @include clearfix();
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+  li {
+    padding: 4px 0;
+    list-style-type: none;
+    @media only screen and (min-width: 64em) {
+      width: 50%;
+      float: left;
+    }
+  }
+}
+
+ul.contact-list {
+ margin: 0;
+ padding: 0;
+  li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 1.5em;
+    list-style-type: none;
+    &::before {
+      margin-left: -1.5em;
+      font-family: 'FontAwesome';
+      display: inline-block;
+      position: relative;
+      float: left;
+      color: $primary-accent-color;
+    }
+    &.contact-address{
+      &::before {content: "\f041";}
+    }
+    &.contact-phone {
+      &::before {content: "\f10b";}
+    }
+    &.contact-direction{
+      &::before {content: "\f1b9";}
+    }
+    &.contact-email{
+      &::before {content: "\f0e0";}
+    }
+    &.contact-facebook{
+      &::before {content: "\f230";}
+    }
+    &.contact-twitter{
+      &::before {content: "\f099";}
+    }
+    &.contact-yelp{
+      &::before {content: "\f1e9";}
+    }
+    &.contact-google-plus{
+      &::before {content: "\f0d5";}
+    }
+  }
+}
+
+ul.forms-list {
+  padding-left: 10px;
+  li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 1.5em;
+    margin-bottom: 30px;
+    &::before {
+      content: "\f15c";
+      font-family: 'FontAwesome';
+      float: left;
+      margin-left: -1.5em;
+      font-size: 21px;
+      color: $primary-accent-color;
+    }
+  }
+}
+
+.map-box {
+  @include breakpoint(small only) {margin-bottom: 20px;}
+  background: $white;
+  border-radius: 3px;
+  padding: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  position: relative;
+  .map-box-text {
+    padding: 18px;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba($white, .85);
+    p {
+      @include flex-grid-column(shrink);
+      margin: 0;
+      @include breakpoint(medium only) {
+        flex: 0 0 100% !important;
+        text-align: center;
+      }
+      &:nth-child(2) {
+        font-weight: bold;
+      }
+    }
+  }
+}

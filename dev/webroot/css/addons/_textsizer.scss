@@ -8,7 +8,7 @@ $base-text-sizer-border-color:    $white !default;
 .text-sizer {
   margin-bottom: rem(30);
   font-size: 0;
-  @media only screen and (max-width: 40em) {display: none;}
+  @include breakpoint(small only) {display: none;}
   a {
     background-color: $base-text-sizer-btn-color;
     text-align: center;

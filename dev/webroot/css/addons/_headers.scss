@@ -1,0 +1,395 @@
+/* Header Types Setup
+===================================================*/
+// Top Bar Color Options
+$header-top-section-background:        #f5f5f5 !default;
+$header-top-section-border:            1px solid $default-color !default;
+$header-top-section-text-color:        $base-font-color !default;
+
+// Top Bar Starting & Scrolling Heights
+$header-info-bar-starting-height:      rem(40) !default;
+$header-info-bar-scrolling-height:     rem(0) !default;
+
+// Logo & Nav Wrapper Starting & Scrolling Heights
+$header-nav-wrapper-starting-height:   rem(120) !default;
+$header-nav-wrapper-scrolling-height:  rem(80) !default;
+
+// Image Logo Starting & Scrolling Heights
+// Not needed for text based logos
+$header-logo-starting-height:          rem(101) !default;
+$header-logo-scrolling-height:         rem(60) !default;
+
+// Responsive Menu Button Setup for Inline Header
+$base-navbar-inline-toggle-width:      rem(50) !default;
+$base-navbar-inline-toggle-font-size:  rem(22) !default;
+$base-navbar-inline-toggle-link-color: $darkgrey !default;
+
+/* Basic Header
+===================================================*/
+header.header-basic {
+  @include breakpoint(639px down) {
+    text-align: center;
+    border-bottom: 1px solid $default-color;
+    .header-info {text-align: center !important; float: none !important;}
+  }
+  .header-top-section {
+    background-color: $header-top-section-background;
+    height: $header-info-bar-starting-height;
+    line-height: $header-info-bar-starting-height;
+    @include breakpoint(small only) {
+      height: auto;
+      line-height: auto;
+      text-align: center;
+    }
+  }
+
+  .header-info {
+    text-align: right;
+    float: right;
+  }
+
+  .header-bottom-section {
+    background-color: $white;
+    width: 100%;
+  }
+
+  .logo a {
+    font-size:0;
+    display: block;
+    line-height: ($header-nav-wrapper-starting-height + rem(40));
+  }
+
+  // Wrap the Image Logo and transition the height
+  .logo-wrapper {
+    max-width: 300px;
+    height: $header-logo-starting-height;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  // Reset Logo Image
+  .logo-wrapper > img {
+    width: auto;
+    max-width: 100%;
+    min-height: 20px;
+    display: block;
+  }
+}
+
+// Account for Responsive top Menu Bar
+@media (max-width: 1023px) {
+  .header-basic { margin-top: 40px; }
+}
+
+
+/* Inline Header Setup
+===================================================*/
+header {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.header-wrapper {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+// Match Row Width from Grid
+.header-container {
+  width: 100%;
+  max-width: 75em;
+  margin: 0 auto;
+  position: relative;
+  display: table;
+}
+
+/* Top Info Bar & Social Icons
+================================================== */
+
+.head-contact {
+  font-size: 13px;
+  vertical-align: middle;
+  line-height: inherit;
+  display: inline-block;
+}
+
+.head-contact-list { margin: 0 -10px; }
+
+.head-contact-item {
+  margin: rem(0 10);
+  color: $header-top-section-text-color;
+  vertical-align: top;
+  display: inline-block;
+  white-space: nowrap;
+  @include breakpoint(small only) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.head-social {
+  margin-left: rem(15);
+  font-size: 0;
+  vertical-align: top;
+  float: right;
+
+  @include breakpoint(small only) {
+    float: none;
+    text-align: center;
+  }
+
+  .head-social-list {
+    font-size: 0px;
+  }
+
+  .head-social-item {
+    margin: 0px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .head-social-item a {
+    width: 40px;
+    height: 40px;
+    color: $header-top-section-text-color;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    &:hover { color: $white; }
+  }
+
+  .head-social-item i {
+    font-size: 18px;
+    line-height: inherit;
+    position: relative;
+    vertical-align: top;
+  }
+
+  .head-social-item a:before {
+    width: 100%;
+    height: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    transition: height 0.3s ease 0s;
+  }
+
+  .head-social-item:hover a:before { height: 100%; }
+
+  .head-social-item.facebook a:before { background-color: $facebook-brand-color; }
+  .head-social-item.twitter a:before { background-color: $twitter-brand-color; }
+  .head-social-item.google-plus a:before { background-color: $google-plus-brand-color; }
+  .head-social-item.youtube a:before { background-color: $youtube-brand-color; }
+}
+
+/* Header Inline Transparent
+===================================================*/
+
+// Handles the next container after header
+header.header-transparent + section {
+  margin-top: 0px !important;
+}
+
+header.header-transparent {
+  // Make top & bottom section of header transparent
+  .header-top-section {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+  .header-bottom-section { background-color: transparent; box-shadow: none; }
+
+  nav.navbar > ul > li > a,
+  .responsive-toggle a {
+    color: #fff !important;
+    @media (max-width: 767px) {
+      color: $base-font-color !important;
+    }
+  }
+
+  &.sticky {
+    // Bring back color on Scroll
+    border-bottom: 1px solid $default-color;
+    .header-top-section {
+      background-color: $secondary-accent-color;
+    }
+
+    .header-bottom-section {
+      background-color: #ffffff;
+    }
+
+    nav.navbar > ul > li > a,
+    .responsive-toggle a { color: $base-font-color !important; }
+  }
+}
+
+@media (max-width: 1023px) {
+  header.header-transparent {
+    position: fixed !important;
+  }
+}
+
+@media (max-width: 767px) {
+  header.header-transparent {
+    position: static !important;
+  }
+
+  header.header-transparent .header-bottom-section {
+    background-color: #ffffff;
+  }
+
+  .responsive-toggle a { color: inherit !important; }
+}
+
+
+/* Header Inline Non-Transparent
+===================================================*/
+
+// Handles the next container after header if not transparent
+header.header-inline + section {
+  margin-top: ($header-info-bar-starting-height + $header-nav-wrapper-starting-height);
+}
+
+// Top Info Bar
+.header-top-section {
+  background-color: $header-top-section-background;
+  border-bottom: $header-top-section-border;
+  height: $header-info-bar-starting-height;
+  line-height: $header-info-bar-starting-height;
+}
+
+.header-bottom-section {
+  background-color: $white;
+  box-shadow: 0px 2px 0px -1px rgba(0, 0, 0, 0.08);
+}
+
+header.header-inline {
+  // Placed on the two wrappers in header - Header Top & Bottom
+  .header-transition {
+    transition-property: background-color, box-shadow, line-height, height;
+    transition-duration: 0.3s;
+  }
+
+  .logo {
+    float: left;
+    clear: both;
+    position: relative;
+    > a {
+      font-size: 0;
+      display: block;
+    }
+  }
+
+  .header-bottom-section, .logo a {
+    line-height: $header-nav-wrapper-starting-height;
+  }
+
+  // Wrap the Image Logo and transition the height
+  .logo-wrapper {
+    max-width: 300px;
+    height: $header-logo-starting-height;
+    display: inline-block;
+    vertical-align: middle;
+    transition: height 0.3s ease;
+  }
+
+  // Reset Logo Image
+  .logo-wrapper > img {
+    width: auto;
+    max-width: 100%;
+    height: inherit;
+    min-height: 20px;
+    display: block;
+  }
+
+  .navbar-inline { float: right; position: static; }
+
+  &.sticky-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+
+  &.sticky {
+    // Hide the Info Bar onScroll
+    .header-top-section {
+      height: $header-info-bar-scrolling-height;
+      line-height: $header-info-bar-scrolling-height;
+    }
+
+    // Transition line-height on Scroll
+    .header-bottom-section, .logo a {
+      line-height: $header-nav-wrapper-scrolling-height;
+    }
+
+    // Transition the height on logo image onScroll
+    .logo-wrapper {
+      height: $header-logo-scrolling-height;
+    }
+  }
+}
+
+// Toggle for Responsive Menu
+//----------------------------------
+.responsive-toggle { display: none; }
+
+@media only screen and(max-width: 1023px) {
+  header.header-inline .navbar-inline { @include hidden; }
+
+  .responsive-toggle {
+    width: $base-navbar-inline-toggle-width;
+    height: auto;
+    font-size: $base-navbar-inline-toggle-font-size;
+    text-align: center;
+    float: right;
+    display: block;
+    line-height: inherit;
+    > a {
+      color: $base-navbar-inline-toggle-link-color;
+    }
+  }
+}
+
+// Header Basic & Inline Media Queries
+@media (max-width: 1023px) {
+  .header-basic { margin-top: 40px; }
+
+  // Reset Header Positioning
+  header { position: static !important; }
+
+  header.header-inline.sticky .header-top-section {
+    height: $header-info-bar-starting-height;
+    line-height: $header-info-bar-starting-height;
+  }
+
+  header.header-inline.sticky-nav .header-bottom-section,
+  header.header-inline.sticky-nav .header-bottom-section .logo a { line-height: $header-nav-wrapper-starting-height; }
+  header.header-inline.sticky-nav .logo-wrapper { height: $header-logo-starting-height; }
+
+  header.header-inline + section {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+
+  header.header-inline .header-top-section { display: none; }
+
+  // Shrink Logo & Nav Down for Small Viewports
+  header.header-inline.sticky-nav .header-bottom-section,
+  header.header-inline.sticky-nav .header-bottom-section .logo a {
+    line-height: ($header-nav-wrapper-starting-height / 2);
+  }
+  header.header-inline.sticky-nav .logo-wrapper {
+    height: ($header-logo-starting-height / 2);
+  }
+}

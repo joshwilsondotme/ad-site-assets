@@ -1,42 +1,39 @@
-<div id="main-banner" class="show-for-medium-up">
-  <div id="slide-controls-container">
-    <a href="#" id="prev"><i class="fa fa-chevron-left"></i></a>
-      <div id="slide-pager"></div>
-    <a href="#" id="next"><i class="fa fa-chevron-right"></i></a>
-  </div>
-  <div id="slider" class="cycle-slideshow"
+<section id="main-banner">
+  <h2 class="h-outline">Banner</h2>
+  <div id="slider-full" class="cycle-slideshow"
     data-cycle-slides=".slide"
     data-cycle-timeout="10000"
     data-cycle-prev="#prev"
     data-cycle-next="#next"
     data-cycle-pager="#slide-pager"
+    data-cycle-swipe=true
+    data-cycle-swipe-fx=scrollHorz
     data-cycle-pager-template="<a href=#>{{slideNum}}</a>">
-      <div class="slide slide1">
-        <div class="row">
-          <div class="medium-5 columns">
-            <div class="slide-content">
-              {{{fragment.slide1}}}
-            </div>
-          </div>
+    <div class="slide slide-1">
+      <div class="row">
+        <div class="slide-content animated fadeIn">
+          {{{fragment.slide-1}}}
         </div>
       </div>
-      <div class="slide slide2">
-        <div class="row">
-          <div class="medium-5 columns">
-            <div class="slide-content">
-              {{{fragment.slide2}}}
-            </div>
-          </div>
+    </div>
+    <div class="slide slide-2">
+      <div class="row">
+        <div class="slide-content">
+          {{{fragment.slide-2}}}
         </div>
       </div>
-      <div class="slide slide3">
-        <div class="row">
-          <div class="medium-5 columns">
-            <div class="slide-content">
-              {{{fragment.slide3}}}
-            </div>
-          </div>
+    </div>
+    <div class="slide slide-3">
+      <div class="row">
+        <div class="slide-content">
+          {{{fragment.slide-3}}}
         </div>
       </div>
+    </div>
   </div>
-</div>
+  <div id="slide-controls-container">
+    <a href="#" id="prev" class="slider-controls"><i class="fa fa-chevron-left"></i></a>
+    <a href="#" id="next"  class="slider-controls"><i class="fa fa-chevron-right"></i></a>
+  </div>
+  <div id="slide-pager"></div>
+</section>

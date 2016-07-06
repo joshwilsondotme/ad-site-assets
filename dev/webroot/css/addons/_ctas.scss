@@ -1,0 +1,215 @@
+// CTAs main
+
+$cta-side-img            : false !default;
+$cta-wrapper-bg-color    : $white !default;
+$cta-wrapper-padding     : rem(40 0) !default;
+$cta-wrapper-box-shadow  : none !default;
+$cta-z-index             : 2 !default;
+$cta-bg                  : $white !default;
+$cta-text-align          : center !default;
+$cta-image-padding       : 4px !default;
+$cta-border-radius       : 2px !default;
+$cta-border-width        : 1px !default;
+$cta-border-color        : #d1d5d9 !default;
+$cta-box-shadow          : 0 2px 4px rgba(0,0,0,0.1) !default;
+$cta-text-bg             : null !default;
+$cta-text-padding        : 10px 30px 30px !default;
+$cta-heading-element     : h3 !default;
+$cta-heading-font-size   : $base-title-h3 !default;
+$cta-heading-color       : $base-title-font-color !default;
+$cta-p-font-size         : $base-font-size !default;
+$cta-p-padding           : $base-paragraph-margin-bottom !default;
+$cta-p-color             : $base-font-color !default;
+$cta-text-align          : center !default;
+$cta-img-size            : 100% !default;
+$cta-img-background      : trasparent !default;
+$cta-img-border-radius   : 0 !default;
+$cta-img-height          : auto !default;
+$cta-img-line-height     : $cta-img-height !default;
+$cta-img-icon-color      : transparent !default;
+$cta-icon-size           : $base-title-h1 !default;
+$cta-img-border          : none !default;
+
+// @mixin cta($options...) {
+//   @if (index($options, icon)) {
+//     $newoptions: (
+//       wrapper-bg-color: #000,
+//       text-align: left,
+//       box-shadow: none,
+//       text-bg: none,
+//       element-bg: none,
+//       border-width: 0,
+//       p-padding: 0
+//       );
+//
+//     @include cta-build($newoptions...);
+//     }
+// }
+
+@mixin cta(
+    $type: null,
+    $side-img: $cta-side-img,
+    $wrapper-bg-color: $cta-wrapper-bg-color,
+    $wrapper-padding: $cta-wrapper-padding,
+    $wrapper-box-shadow: $cta-wrapper-box-shadow,
+    $z-index : $cta-z-index,
+    $element-bg: $cta-bg,
+    $text-align: $cta-text-align,
+    $element-padding: $cta-image-padding,
+    $border-radius: $cta-border-radius,
+    $border-width: $cta-border-width,
+    $border-color: $cta-border-color,
+    $box-shadow: $cta-box-shadow,
+    $text-bg: $cta-text-bg,
+    $text-padding: $cta-text-padding,
+    $heading-element: $cta-heading-element,
+    $heading-font-size: $cta-heading-font-size,
+    $heading-color: $cta-heading-color,
+    $p-font-size: $cta-p-font-size,
+    $p-padding: $cta-p-padding,
+    $p-color: $cta-p-color,
+    $text-align: $cta-text-align,
+    $img-size: $cta-img-size,
+    $img-bg: $cta-img-background,
+    $img-radius: $cta-img-border-radius,
+    $img-height: $cta-img-height,
+    $img-line-height: $cta-img-line-height,
+    $img-color: $cta-img-icon-color,
+    $icon-size: $cta-icon-size,
+    $img-border: $cta-img-border
+  ) {
+  .ctas {
+    background: $wrapper-bg-color;
+    padding: $wrapper-padding;
+    @if ($wrapper-box-shadow != none) {
+      position: relative;
+      z-index: $z-index;
+      box-shadow: $wrapper-box-shadow;
+    }
+  }
+  @if ($side-img == true) {
+    .ctas {
+      @include breakpoint(medium down) {
+        .cta {
+          margin-bottom: 40px;
+        }
+        .columns:last-child .cta {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .cta {
+      background: $element-bg;
+      text-align: $text-align;
+      padding: $element-padding;
+      border-radius: $border-radius;
+      border-width: $border-width;
+      border-color: $border-color;
+      border-style: solid;
+      box-shadow: $box-shadow;
+      .cta-text {
+        padding: 30px;
+        background: $text-bg;
+        margin-top: 0;
+        position: relative;
+        z-index: 2;
+      }
+      #{$heading-element} {
+        font-size: $heading-font-size;
+        color:     $heading-color;
+        margin-top: 0;
+      }
+      p {
+        font-size: $p-font-size;
+        color: $p-color;
+        margin-bottom: $p-padding;
+      }
+      .cta-img {
+        position: relative;
+        overflow: hidden;
+        @media (max-width: 639px) {
+          min-height: rem(250);
+        }
+      }
+      img {
+        min-height: 100%;
+        min-width: 100%;
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  } @else {
+    .ctas {
+      @include breakpoint(small only) {
+        .cta {
+          margin-bottom: 40px;
+        }
+        .columns:last-child .cta {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .cta {
+      background: $element-bg;
+      text-align: $text-align;
+      padding: $element-padding;
+      border-radius: $border-radius;
+      border-width: $border-width;
+      border-color: $border-color;
+      border-style: solid;
+      box-shadow: $box-shadow;
+      img {
+        width: $img-size;
+      }
+      .cta-icon {
+        background: $img-bg;
+        border: $img-border;
+        border-radius: $img-radius;
+        color: $img-color;
+        font-size: $icon-size;
+        height: $img-height;
+        line-height: $img-line-height;
+        margin-left: auto;
+        margin-right: auto;
+        width: $img-size;
+        text-align: center;
+      }
+      .cta-text {
+        padding: $text-padding;
+        background: $text-bg;
+        @if ($element-bg != $text-bg) and ($element-bg != none) {
+          margin-top: $element-padding;
+        }
+        @if ($text-padding != 0) {
+          @include breakpoint(medium only) {
+            padding-right: 10px;
+            padding-left: 10px;
+            .btn {display: block; padding: 0;}
+          }
+        }
+      }
+      #{$heading-element} {
+        font-size: $heading-font-size;
+        color:     $heading-color;
+        margin-top: 0;
+      }
+      p {
+        font-size: $p-font-size;
+        color: $p-color;
+        margin-bottom: $p-padding;
+        @if ($p-padding == 0) {
+          @include breakpoint(medium down) {
+            margin-bottom: $base-paragraph-margin-bottom;
+          }
+        }
+      }
+    }
+  }
+}

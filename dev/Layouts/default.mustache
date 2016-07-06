@@ -1,19 +1,29 @@
-{{>site_header}}
- <div id="int-banner" class="white">
-   <div class="row">
-     <div class="small-12 columns">{{{fragment.interior-banner}}}</div>
-   </div>
- </div>
- <div class="main-content-wrap">
-   <div class="row">
-    <section id="main-content" class="medium-8 columns">
-       {{{flash}}}
-      <h1>{{page.Page.title}}</h1>
-      {{{pageContent}}}
-    </section>
-    <aside class="medium-4 columns" id="sidebar">
-      {{>main_sidebar}}
-    </aside>
-   </div>
- </div>
-{{>site_footer}}
+{{>html-top}}
+{{>header-basic}}
+  <div id="sub-banner">
+    <div class="row">
+      <div class="small-12 columns">{{{fragment.interior-banner}}}</div>
+    </div>
+  </div>
+  <div class="main-content-wrap">
+    <div class="row medium-unstack">
+      <div id="main-content" class="medium-7 large-8 columns">
+        <h1>{{page.Page.title}}</h1>
+        {{{pageContent}}}
+      </div>
+      <div id="sidebar" class="medium-5 large-4 columns">
+        <aside>
+          <div class="text-sizer">
+            <div class="btns clearfix">
+              <a class="setFontSize text-sml" title="16" href="#"><span>Small</span></a>
+              <a class="setFontSize text-med" title="18" href="#"><span>Medium</span></span></a>
+              <a class="setFontSize text-lrg" title="20" href="#"><span>Large</span></a>
+            </div>
+          </div>
+          <div class="sidebar">{{{sidebar}}}</div>
+        </aside>
+      </div>
+    </div>
+  </div>
+{{>footer}}
+{{>html-bottom}}

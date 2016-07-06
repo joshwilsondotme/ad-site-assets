@@ -10,7 +10,7 @@
 		"___": "  This should be basically every js file except jQuery (which should be served from the google CDN) or page-specific files",
 		"layout": ["../dependencies/oneframework/js/plugins.js", "../dependencies/oneframework/js/app.js", "script.js"]
 	},
-  "dependencies": {
-    "oneframework": "AudiologyDesign/oneframework#master"
+	"dependencies": {
+    "oneframework": "AudiologyDesign/oneframework#2.1"
   }
 }
