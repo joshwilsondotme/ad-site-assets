@@ -338,6 +338,7 @@ $base-blockquote-font-size:     $base-paragraph-font-size !default;
 $base-blockquote-font-style:    italic !default;
 $base-blockquote-padding:       rem(10) !default;
 $base-blockquote-margin-bottom: rem(35) !default;
+$blockquote-border-color:       $primary-accent-color !default;
 
 blockquote {
   font-size:     $base-blockquote-font-size;
