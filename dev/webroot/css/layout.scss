@@ -15,9 +15,8 @@
 
 
 // TODO Fix these conflicts
-nav.navbar ul > li[class*="columns"] > ul > li[class*="column"] a.column-title:hover {
-  background-color: transparent;
-  color: inherit;
+nav.navbar ul > li[class*="columns"] > ul > li[class*="column"] a.column-title{
+  display: none;
 }
 
 .btn-social{
