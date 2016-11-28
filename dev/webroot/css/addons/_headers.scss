@@ -304,7 +304,7 @@ header.header-inline {
   .logo-wrapper > img {
     width: auto;
     max-width: 100%;
-    height: inherit;
+    height: inherit !important;
     min-height: 20px;
     display: block;
   }
