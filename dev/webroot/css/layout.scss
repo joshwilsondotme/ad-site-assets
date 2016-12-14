@@ -34,7 +34,6 @@ nav.navbar ul > li[class*="columns"] > ul > li[class*="column"] a.column-title{
 }
 
 
-
 /* Navigation
 ===================================================*/
 $nav-wrap-bg                 : $primary-accent-color;
@@ -158,12 +157,19 @@ $nav-dropdown-border-radius  : 2px;
 
 #slider-full {
   .slide-content {
-
+    h3 {}
+    p  {}
   }
 }
 
 /* CTAs
 ===================================================*/
+.ctas {
+  background: $lightgrey;
+  padding: rem(30 0);
+  @include cta();
+  @include breakpoint(small only) { margin-bottom: rem(30); }
+}
 // Bordered Icon CTA
 // @include cta(
 //   $img-size: 100px,
@@ -199,6 +205,13 @@ $nav-dropdown-border-radius  : 2px;
 /* Homepage Content Blocks
 ===================================================*/
 .hp-section {
+  .by-line {
+    font-family: $alt-font;
+    font-size: rem(14);
+    text-transform: uppercase;
+    color: $primary-accent-color;
+    margin: 0;
+  }
   &.first {}
   &.second {}
   &.third {}
@@ -287,6 +300,7 @@ $nav-dropdown-border-radius  : 2px;
 ===================================================*/
 .logo-list  {
   padding: rem(30 0);
+  margin: 0;
   @include flex-grid-row();
   @include flex-grid-row-align(null, middle);
   > li {
@@ -316,16 +330,26 @@ $nav-dropdown-border-radius  : 2px;
 .main-content-wrap {
   background-color: $white;
   padding: rem(60 0);
+  // Boxed Main Content
+  // #main-content {
+  //   background: $white;
+  //   padding: rem(30);
+  //   box-shadow: 0px 2px 4px 0px rgba(37, 46, 55, 0.1);
+  // }
 }
 
 #sidebar {
   @media only screen and (max-width: 40em) { margin-top: rem(40);}
+  @include cta;
   .cta {margin-bottom: rem(30);}
 }
 
 /* Footer
 ===================================================*/
-.footer-logo {width: 200px;}
+.footer-logo {
+  background: $white;
+  padding: rem(10);
+}
 footer {}
 
 
