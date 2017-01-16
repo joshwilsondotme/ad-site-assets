@@ -168,7 +168,11 @@ $nav-dropdown-border-radius  : 2px;
   background: $lightgrey;
   padding: rem(30 0);
   @include cta();
-  @include breakpoint(small only) { margin-bottom: rem(30); }
+  .cta {
+    @include breakpoint(small only) {
+      margin-bottom: 2rem;
+    }
+  }
 }
 // Bordered Icon CTA
 // @include cta(
