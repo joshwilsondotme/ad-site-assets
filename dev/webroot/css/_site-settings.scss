@@ -74,14 +74,14 @@ $base-font-color:  #333;
 //----------------------------------
 
 // Set Headings
-// $base-title-h1: rem(40);
-// $base-title-h2: rem(34);
-// $base-title-h3: rem(26);
-// $base-title-h4: rem(22);
-// $base-title-h5: rem(20);
-// $base-title-h6: rem(18);
+$base-title-h1: rem(28);
+$base-title-h2: rem(24);
+$base-title-h3: rem(22);
+$base-title-h4: rem(20);
+$base-title-h5: rem(18);
+$base-title-h6: rem(16);
 //
-// $base-title-font-color:      #222;
+$base-title-font-color:      $base-font-color;
 $base-title-font-family:     $alt-font;
 // $base-title-font-weight:     normal;
 // $base-title-font-style:      normal;
