@@ -157,8 +157,9 @@ $nav-dropdown-border-radius  : 2px;
 
 #slider-full {
   .slide-content {
-    h3 {}
-    p  {}
+    h3 {font-size: rem(44);}
+    p  {font-size: rem(18);}
+    .btn {@extend %btn-white;}
   }
 }
 
@@ -166,7 +167,7 @@ $nav-dropdown-border-radius  : 2px;
 ===================================================*/
 .ctas {
   background: $lightgrey;
-  padding: rem(30 0);
+  padding: rem(40 0);
   @include cta();
   .cta {
     @include breakpoint(small only) {
@@ -216,6 +217,11 @@ $nav-dropdown-border-radius  : 2px;
     color: $primary-accent-color;
     margin: 0;
   }
+
+  @include breakpoint(medium down) {
+    .btn + .btn {margin-top: 1rem;}
+  }
+
   &.first {}
   &.second {}
   &.third {}

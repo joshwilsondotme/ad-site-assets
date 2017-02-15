@@ -279,7 +279,9 @@ ul.forms-list {
       }
       &:nth-child(2) {
         font-weight: bold;
+        font-size: rem(19);
       }
     }
+    @include breakpoint(medium down) { position: relative; }
   }
 }
