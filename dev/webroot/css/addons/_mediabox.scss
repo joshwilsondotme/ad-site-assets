@@ -104,6 +104,15 @@ $base-media-box-padding: 0px !default;
         top: rem(300);  /* your iframe height */
         margin-top: rem(-300);  /* your iframe height */
       }
+      .address-container {
+        @include flex-grid-row;
+        .location-column {
+          @include flex-grid-column(6);
+          @include breakpoint(small only) {
+            @include flex-grid-column(12);
+          }
+        }
+      }
     }
   }
 }
