@@ -1,0 +1,28 @@
+.balloon-sinusplasty-list {
+	margin-bottom: 1rem;
+	li {
+		padding: rem(0 35);
+		position: relative;
+		width: 23%;
+		img {width: 100%; height: auto;}
+		&:before {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 25px;
+			border-radius: 50%;
+			text-align: center;
+			border: 2px solid $primary-accent-color;
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		&:nth-child(1):before {content: "1";}
+		&:nth-child(2):before {content: "2";}
+		&:nth-child(3):before {content: "3";}
+		&:nth-child(4):before {content: "4";}
+		@include breakpoint(medium down) {
+			width: 45%;
+		}
+	}
+}

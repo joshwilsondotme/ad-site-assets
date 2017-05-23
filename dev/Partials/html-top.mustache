@@ -14,8 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
     <link rel="stylesheet" href="{{cdn.projects}}js/fancybox/jquery.fancybox.css">
     <script src="{{{cdn.projects}}}js/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    {{{fragment.js-global-head}}}
+    {{{fragment.js-page-head}}}
   </head>
   <body class="{{page.Page.slug}}">
+    {{{fragment.js-global-body}}}
+    {{{fragment.js-page-body}}}
+
     <!--[if IE 9]>
     <div style="background: #000; width: 400px; height: auto; font-size: 20px; padding: 30px 0; text-align: center; color: red; position: fixed; top: 20%; right: 0px; z-index: 9999;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" style="color: white; text-decoration: underline;">upgrade your browser</a> to improve your experience.</div>
     <![endif]-->
