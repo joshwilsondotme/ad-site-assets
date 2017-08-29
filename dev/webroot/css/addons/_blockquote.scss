@@ -1,0 +1,104 @@
+/* Blockquotes
+===================================================*/
+
+$base-blockquote-font-color:    $base-font-color !default;
+$base-blockquote-font-size:     $base-paragraph-font-size !default;
+$base-blockquote-font-style:    italic !default;
+$base-blockquote-padding:       rem(10) !default;
+$base-blockquote-margin-bottom: rem(35) !default;
+$blockquote-border-color:       $primary-accent-color !default;
+
+blockquote {
+  font-size:     $base-blockquote-font-size;
+  font-style:    $base-blockquote-font-style;
+  margin-bottom: $base-blockquote-margin-bottom;
+  padding:       $base-blockquote-padding;
+  color:         $base-blockquote-font-color;
+  line-height:   $base-line-height;
+  border-left:   0;
+  position:      relative;
+
+  cite {
+    color: $base-font-color;
+    display: block;
+    text-align: left;
+    font-style: normal;
+    font-size: $base-blockquote-font-size;
+    margin-top: rem(15);
+  }
+}
+
+//Left Border Blockquote
+.border-quote {
+  border-left:   4px solid $blockquote-border-color;
+  text-align:    left;
+}
+
+//Bubble Quote
+.bubble-quote {
+  background-color: $white;
+  border-radius: $base-border-radius;
+  padding: 30px;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0px 5px 0px rgba(0,0,0,0.25);
+  margin-bottom: rem(65);
+  font-style: italic;
+
+  &::before, &::after {
+    border-bottom: 46px solid transparent;
+    border-right: 46px solid $white;
+    bottom: -46px;
+    content: '';
+    position: absolute;
+    right: 25px;
+  }
+
+  &::before {
+    border-right: 49px solid rgba(0,0,0,0.25);
+    bottom: -52px;
+    right: 24px;
+  }
+
+  cite {
+    display: block;
+    text-align: right;
+    color: $secondary-accent-color;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  a {
+    text-align: right;
+    font-weight: bold;
+    display: inherit;
+    text-decoration: underline;
+  }
+
+}
+
+
+//Large Blockquote
+$blockquote-quote-border-radius: $base-border-radius !default;
+$blockquote-quote-color:         $white !default;
+$blockquote-quote-opacity:       .7 !default;
+$blockquote-quote-background:    $primary-accent-color !default;
+$blockquote-quote-padding:       rem(30);
+
+.lrg-quote {
+  background-color: $blockquote-quote-background;
+  border-radius: $blockquote-quote-border-radius;
+  padding: rem(30);
+  color: $white;
+  &::before {
+    content: '\201C';
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: rem(5);
+    left: rem(10);
+    opacity: $blockquote-quote-opacity;
+    color: $blockquote-quote-color;
+    font-size: rem(42);
+  }
+
+}

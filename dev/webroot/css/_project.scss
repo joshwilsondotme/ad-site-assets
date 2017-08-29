@@ -1,3 +1,8 @@
+// TODO Fix these conflicts
+nav.navbar ul > li[class*="columns"] > ul > li[class*="column"] a.column-title{
+  display: none;
+}
+
 $btn-style: 'btn-style-1' !default;
 
 %btn-style-1 {
@@ -283,5 +288,117 @@ ul.forms-list {
       }
     }
     @include breakpoint(medium down) { position: relative; }
+  }
+}
+
+/* Social Media
+===================================================*/
+.btn-social{
+  &.btn-social-full {
+    width: auto;
+    padding: rem(0 15);
+  }
+  &.btn-social-round {
+    border-radius: $base-social-line-height ;
+  }
+  &.btn-social-icon {
+    background: none;
+    height: auto;
+  }
+}
+
+/* Testimonial Sliders
+===================================================*/
+
+.testimonial-slider{
+  blockquote {
+    font-family: $alt-font;
+    font-style: italic;
+    font-size: rem(24) !important;
+    font-weight: normal;
+
+    cite {
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: $base-font;
+      margin-top: rem(30);
+    }
+  }
+}
+
+// TODO Fix this
+// .testimonial-slider-carousel {
+//   padding: 0;
+//   height: auto;
+//   @include flex-grid-row();
+//   @include flex-grid-row-align(spaced);
+//   blockquote {
+//     @include flex-grid-column(5);
+//     @include flex-grid-column-align();
+//     margin-bottom: 0;
+//     white-space: normal;
+//     text-align: center;
+//     cite {text-align: center; margin-top: rem(20);}
+//     @media (max-width: 640px) {
+//       @include flex-grid-column(12);
+//     }
+//   }
+//
+// }
+
+/* Logo List Slider
+===================================================*/
+.logo-list-slider {
+  padding: 0;
+  height: auto;
+  margin-top: rem(40);
+  @include flex-grid-row();
+  li {
+    list-style-type: none;
+    @include flex-grid-column();
+    @include flex-grid-column-align(middle);
+    text-align: center;
+    a {display: block;}
+    img {width: 75%;}
+  }
+}
+
+.basic-slide-controls {
+  width: 100%;
+  text-align: center;
+  margin-top: rem(40);
+  .list-pager, .test-pager {
+    a {
+      display: inline-block;
+      width: rem(10);
+      height: rem(10);
+      @include border-radius(50%);
+      border: 2px solid $primary-accent-color;
+      margin: rem(0 2);
+      text-indent: -9999px;
+      background-color: transparent;
+      &.cycle-pager-active {background-color: rgba($primary-accent-color,1)}
+    }
+  }
+}
+
+/* Logo List
+===================================================*/
+.logo-list  {
+  padding: rem(30 0);
+  margin: 0;
+  @include flex-grid-row();
+  @include flex-grid-row-align(null, middle);
+  > li {
+    list-style-type: none;
+    @include flex-grid-column();
+    @include flex-grid-column-align(middle);
+    @include breakpoint(small down) {
+      @include flex-grid-column(12);
+      img {width: 50%; margin: 0 auto; display: block;}
+      margin-top: rem(30);
+      &:first-child {margin-top: 0;}
+    }
   }
 }
